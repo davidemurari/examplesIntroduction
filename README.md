@@ -17,9 +17,15 @@ The directory titled [freeRigidBody](freeRigidBody) includes a Jupyter notebook 
 $$
 \dot{\mathbf{x}}(t) = \begin{bmatrix} x_2(t)x_3(t)\frac{I_2-I_3}{I_2I_3} \\ -x_1(t)x_3(t)\frac{I_1-I_3}{I_1I_3} \\ x_1(t)x_2(t)\frac{I_1-I_2}{I_1I_2}\end{bmatrix},\,\,\mathbf{x}(t) = [x_1(t),x_2(t),x_3(t)].
 $$
-The considered initial condition is $\mathbf{x}(0) = [\cos{(0.1)},0,\sin{(0.1)}]$ and the inertia parameters are $I_1=2$, $I_2=1$ and $I_3=2/3$. The obtained plot is
-![Energy preservation with Lie Euler](plotsIntroduction/EnergyPreservation.png)
+The considered initial condition is $\mathbf{x}(0) = [\cos{(0.1)},0,\sin{(0.1)}]$ and the inertia parameters are $I_1=2$, $I_2=1$ and $I_3=2/3$.
+
 The code is a simplified version of the code available at the repository https://github.com/davidemurari/learningConstrainedHamiltonians
+
+The obtained plot is:
+
+![Energy preservation with Lie Euler](plotsIntroduction/EnergyPreservation.png)
+
+
 
 ### Approximating the flow map of an harmonic oscillator
 
@@ -67,7 +73,7 @@ Here is the structure of the ELM directory:
 - [scripts](pararealSIR/ELM/scripts/) : this folder collects the scripts for the main experiment. We briefly comment on them:
     - [dynamics](pararealSIR/ELM/scripts/dynamics.py) : this script contains some utils to define the ODE for the SIR plroblem, and define the loss function based on the ODE residual
     - [ode_solvers](pararealSIR/ELM/scripts/ode_solvers.py) : this script contains the definition of the ODE solver we use as fine propagator, i.e., a Runge--Kutta method of order 4.
-    - [parareal](pararealSIR/ELM/scripts/ode_solvers.py) : this scripts contains the procedure to apply the Parareal iterations, while training the ELMs as coarse propagators. The solutions to the involved optimisation problems are provided by Scipy solvers.
+    - [parareal](pararealSIR/ELM/scripts/parareal.py) : this scripts contains the procedure to apply the Parareal iterations, while training the ELMs as coarse propagators. The solutions to the involved optimisation problems are provided by Scipy solvers.
     - [plotting](pararealSIR/ELM/scripts/plotting.py): this script produces a plot of the obtained solution over the required time interval. This will be the plot of a piecewise smooth function, since over the intervals $[t_n,t_{n+1})$, with $t_n=n\,\Delta t$, the solution produced by the ELM is plotted, while at the discretisation points $t_n$ the solution is corrected with the parareal step, hence it is in principle discontinuous.
     - [repeated_experiment](pararealSIR/ELM/scripts/repeated_experiments.py) : this scripts is used to repeat the experiment of applying the proposed hybrid Parareal method a certain amount of times. This is of interest so we can compute average computational costs, hence being able to analyse a method which in principle is stochastic.
     - [utils](pararealSIR/ELM/scripts/utils.py) : this scripts contains methods that allow to define a coarse propagator as an ELM. We use these methods to train and define the coarse propagator, but also to obtain the evaluation of the coarse solver over a given time vector.
@@ -91,5 +97,7 @@ We provide a brief description of the files included in the directory, and concl
 - [main](MassPreservingSIRmodel/main.ipynb) : this notebook includes the definition of the two neural network architectures, the lines of code to train them and to display the obtained results. 
 - [unconstrainedNet](MassPreservingSIRmodel/unconstrainedNet.pt) : this is the saved model for the unconstrained neural network.
 - [constrainedNet](MassPreservingSIRmodel/constrainedNet.pt) : this is the saved model for the constrained neural network.
+
+The code is a simplified version of the code available at the repository https://github.com/davidemurari/StructuredNeuralNetworks 
 
 ![Mass preserving in SIR model](plotsIntroduction/plotSIR_PINN.png)
