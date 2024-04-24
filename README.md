@@ -30,12 +30,10 @@ The obtained plot is:
 ### Approximating the flow map of an harmonic oscillator
 
 The focus here is on the ODEs for a harmonic oscillator, which write
-$
-\begin{cases}
-\dot{q}(t) = p(t)\\
-\dot{p}(t) = -q(t)
-\end{cases}.
-$
+$\begin{cases}
+\dot{q}(t)=p(t)\\
+\dot{p}(t)=-q(t)
+\end{cases}.$
 We train a neural network to solve the problem for a collection of initial conditions in the box $[-1,1]^2\subset\mathbb{R}^2$, and for $t\in [0,1]$. Then, the model is deployed on the wider time intervals $[0,T=100]$ and $[0,T=500]$.The reported plots correspond to the initial condition $[q(0),p(0)]=[1,0]$.
 
 The directory titled [harmonicOscillator](harmonicOscillator) includes the following:
@@ -56,13 +54,11 @@ The directory titled [harmonicOscillator](harmonicOscillator) includes the follo
 ### Parareal solver based on neural networks for the SIR model
 
 Here we focus on the equations defining the SIR model for a specific choice of parameters. The equations we consider write
-$
-\begin{bmatrix}
+$\begin{bmatrix}
     \dot{x}(t) \\ 
     \dot{y}(t) \\ 
     \dot{z}(t) \\
-\end{bmatrix} = \begin{bmatrix} -x(t)y(t)\\ x(t)y(t)-y(t) \\y(t) \end{bmatrix} =: \mathcal{F}(x(t),y(t),z(t)).
-$
+\end{bmatrix}=\begin{bmatrix} -x(t)y(t)\\ x(t)y(t)-y(t) \\y(t) \end{bmatrix}=:\mathcal{F}(x(t),y(t),z(t)).$
 The directory associated to this experiment, where we use the Parareal method based on neural network coarse propagators, is [pararealSIR](pararealSIR). 
 
 The directory has a sub-directory [ELM](pararealSIR/ELM/) where the scripts based on a coarse propagator which is an Extreme Learning Machine (ELM) are collected. In the sub-directory [flowMapNetwork](pararealSIR/flowMapNetwork/) we instead collect the code for a coarse propagator based on a similar procedure as the one followed for the harmonic oscillator above. The structure of this second sub-directory is essentially the same of the one for the harmonic oscillator, with a few additional scripts that also belong to the ELM sub-directory and we now describe.
