@@ -18,7 +18,7 @@ The directory titled [freeRigidBody](freeRigidBody) includes a main script [main
 
 The considered initial condition is $\mathbf{x}(0) = [\cos{(0.1)},0,\sin{(0.1)}]$ and the inertia parameters are $I_1=2$, $I_2=1$ and $I_3=2/3$.
 
-In the folder [scripts](freeRigidBody/scripts/) are collected the script [utils](freeRigidBody/scripts/utils.py) with methods to compute the explicit Euler and Lie Euler steps, and the script [plotting](freeRigidBody/scripts/plotting.py) with a method generating the plot below. The plot is then saved in the folder [savedPlots](https://github.com/davidemurari/examplesIntroduction/blob/main/freeRigidBody/savedPlots).
+In the folder [scripts](freeRigidBody/scripts/) are collected the script [utils](freeRigidBody/scripts/utils.py) with methods to compute the explicit Euler and Lie Euler steps, and the script [plotting](freeRigidBody/scripts/plotting.py) with a method generating the plot below.
 
 The code is a simplified version of the code available at the repository https://github.com/davidemurari/learningConstrainedHamiltonians
 
@@ -37,7 +37,6 @@ The focus here is on the ODEs for a harmonic oscillator, which write
 We train a neural network to solve the problem for a collection of initial conditions in the box $[-1.2,1.2]^2\subset\mathbb{R}^2$, and for $t\in [0,1]$. Then, the model is deployed on the wider time intervals $[0,T=100]$ and $[0,T=500]$.The reported plots correspond to the initial condition $[q(0),p(0)]=[1,0]$.
 
 The directory titled [harmonicOscillator](harmonicOscillator) includes the following:
-- [savedPlots](https://github.com/davidemurari/examplesIntroduction/tree/harmonicOscillator/savedPlots) folder : this is where the generated plots are saved after the code is run
 - [scripts](https://github.com/davidemurari/examplesIntroduction/tree/harmonicOscillator/scripts) folder : this folder contains the Python scripts to run the code, which are:
     - [networks](https://github.com/davidemurari/examplesIntroduction/tree/harmonicOscillator/scripts/networks.py) : this script contains the definition of the neural network architecture we use.
     - [plotting](https://github.com/davidemurari/examplesIntroduction/tree/harmonicOscillator/scripts/plotting.py) : this script contains the plotting routines to get the plots for energy conservation and the qualitative behaviour of the solution
@@ -62,7 +61,6 @@ The directory associated to this experiment, where we use the Parareal method ba
 The directory has a sub-directory [ELM](pararealSIR/ELM/) where the scripts based on a coarse propagator which is an Extreme Learning Machine (ELM) are collected. In the sub-directory [flowMapNetwork](pararealSIR/flowMapNetwork/) we instead collect the code for a coarse propagator based on a similar procedure as the one followed for the harmonic oscillator above. The structure of this second sub-directory is essentially the same of the one for the harmonic oscillator, with a few additional scripts that also belong to the ELM sub-directory and we now describe.
 
 Here is the structure of the ELM directory:
-- [savedPlots](https://github.com/davidemurari/examplesIntroduction/tree/pararealSIR/ELM/savedPlots/) : this is the folder where the plots obtained while running the experiments are stored
 - [savedReports](https://github.com/davidemurari/examplesIntroduction/tree/pararealSIR/ELM/savedReports/) : this is the folder where a .txt file associated to the run is saved. This file describes the results of the run, in terms of timings and parameters.
 - [scripts](https://github.com/davidemurari/examplesIntroduction/tree/pararealSIR/ELM/scripts/) : this folder collects the scripts for the main experiment. We briefly comment on them:
     - [dynamics](https://github.com/davidemurari/examplesIntroduction/tree/pararealSIR/ELM/scripts/dynamics.py) : this script contains some utils to define the ODE for the SIR plroblem, and define the loss function based on the ODE residual
@@ -96,7 +94,6 @@ We provide a brief description of the files included in the directory, and concl
     - [training](/../../davidemurari/examplesIntroduction/tree/main/massPreservingSIRmodel/scripts/training.py) : this script contains the method to train the neural networks
     - [utils](/../../davidemurari/examplesIntroduction/tree/main/massPreservingSIRmodel/scripts/utils.py) : this script contains two methods to reconstruct the piecewise smooth approximation of the solution based on the neural networks.
 - [trainedModels](/../../davidemurari/examplesIntroduction/tree/main/massPreservingSIRmodel/trainedModels/) : this folder collects the files [unconstrainedNet.pt](/../../davidemurari/examplesIntroduction/tree/main/massPreservingSIRmodel/trainedModels/unconstrainedNet.pt) an [constrainedNet.pt](/../../davidemurari/examplesIntroduction/tree/main/massPreservingSIRmodel/trainedModels/constrainedNet.pt) where pre-trained versions of the two networks are stored.
-- [savedPlots](/../../davidemurari/examplesIntroduction/tree/main/massPreservingSIRmodel/savedPlots/) : this folder is where the generated plots are stored
 
 The code is a simplified version of the code available at the repository https://github.com/davidemurari/StructuredNeuralNetworks 
 
