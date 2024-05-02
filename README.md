@@ -83,20 +83,20 @@ We report here the plots for the two choices of coarse propagators, highlighting
 
 ### Mass preserving SIR model
 
-The directory [MassPreservingSIRmodel](MassPreservingSIRmodel) again is interested in the SIR model. Here, instead of solving its equations, we want to approximate the flow map $\Phi_{\mathcal{F}}^{0.05}$, based on observed trajectory segments.
+The directory [massPreservingSIRmodel](massPreservingSIRmodel) again is interested in the SIR model. Here, instead of solving its equations, we want to approximate the flow map $\Phi_{\mathcal{F}}^{0.05}$, based on observed trajectory segments.
 
 We provide a brief description of the files included in the directory, and conclude with the plot also present in the introduction.
 
-- [main](MassPreservingSIRmodel/main.py) : this script includes the definition of the two neural network architectures, the lines of code to train them and to display the obtained results. 
+- [main](massPreservingSIRmodel/main.py) : this script includes the definition of the two neural network architectures, the lines of code to train them and to display the obtained results. 
 
-- [scripts](MassPreservingSIRmodel/scripts/) : this folder includes the scripts used to generate the plots in the introduction. Here is a brief description of the scripts:
-        - [generateData](MassPreservingSIRmodel/scripts/generateData.py) : this script allows to get the trajectory segments based on the number of time instants to consider and the final time value.
-        - [networks](MassPreservingSIRmodel/scripts/training.py) : this script contains the definition of the two neural network architectures
-        - [plotting](MassPreservingSIRmodel/scripts/plotting.py) : this script contains the routine to generate and save the plots
-        - [training](MassPreservingSIRmodel/scripts/training.py) : this script contains the method to train the neural networks
-        - [utils](MassPreservingSIRmodel/scripts/utils.py) : this script contains two methods to reconstruct the piecewise smooth approximation of the solution based on the neural networks.
-- [trainedModels](MassPreservingSIRModel/trainedModels/) : this folder collects the files [unconstrainedNet.pt](MassPreservingSIRmodel/trainedModels/unconstrainedNet.pt) an [constrainedNet.pt](MassPreservingSIRmodel/trainedModels/constrainedNet.pt) where pre-trained versions of the two networks are stored.
-- [savedPlots](MassPreservingSIRModel/savedPlots/) : this folder is where the generated plots are stored
+- [scripts](massPreservingSIRmodel/scripts/) : this folder includes the scripts used to generate the plots in the introduction. Here is a brief description of the scripts:
+        - [generateData](massPreservingSIRmodel/scripts/generateData.py) : this script allows to get the trajectory segments based on the number of time instants to consider and the final time value.
+        - [networks](massPreservingSIRmodel/scripts/training.py) : this script contains the definition of the two neural network architectures
+        - [plotting](massPreservingSIRmodel/scripts/plotting.py) : this script contains the routine to generate and save the plots
+        - [training](massPreservingSIRmodel/scripts/training.py) : this script contains the method to train the neural networks
+        - [utils](massPreservingSIRmodel/scripts/utils.py) : this script contains two methods to reconstruct the piecewise smooth approximation of the solution based on the neural networks.
+- [trainedModels](massPreservingSIRmodel/trainedModels/) : this folder collects the files [unconstrainedNet.pt](massPreservingSIRmodel/trainedModels/unconstrainedNet.pt) an [constrainedNet.pt](massPreservingSIRmodel/trainedModels/constrainedNet.pt) where pre-trained versions of the two networks are stored.
+- [savedPlots](massPreservingSIRmodel/savedPlots/) : this folder is where the generated plots are stored
 
 The code is a simplified version of the code available at the repository https://github.com/davidemurari/StructuredNeuralNetworks 
 
