@@ -1,0 +1,13 @@
+{
+    "creators": [
+	{
+	    "affiliation": "NTNU",
+	    "name": "Murari, Davide",
+	    "orcid": "0000-0002-1095-6685"
+	}
+    ],
+    "description": "Code suppliment to the introduction of the PhD thesis",
+    "license": "MIT",
+    "title": "Implementation of the illustrative examples in the introduction of the PhD thesis",
+    "upload_type": "software"
+}
