@@ -83,7 +83,7 @@ We report here the plots for the two choices of coarse propagators, highlighting
 
 ### Mass preserving SIR model
 
-The directory [massPreservingSIRmodel](/../../examplesIntroduction/tree/main/massPreservingSIRmodel) again is interested in the SIR model. Here, instead of solving its equations, we want to approximate the flow map $\Phi_{\mathcal{F}}^{0.05}$, based on observed trajectory segments.
+The directory [massPreservingSIRmodel](/../../davidemurari/examplesIntroduction/tree/main/massPreservingSIRmodel) again is interested in the SIR model. Here, instead of solving its equations, we want to approximate the flow map $\Phi_{\mathcal{F}}^{0.05}$, based on observed trajectory segments.
 
 We provide a brief description of the files included in the directory, and conclude with the plot also present in the introduction.
 
