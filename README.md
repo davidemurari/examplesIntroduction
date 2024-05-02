@@ -90,11 +90,11 @@ We provide a brief description of the files included in the directory, and concl
 - [main](massPreservingSIRmodel/main.py) : this script includes the definition of the two neural network architectures, the lines of code to train them and to display the obtained results. 
 
 - [scripts](massPreservingSIRmodel/scripts/) : this folder includes the scripts used to generate the plots in the introduction. Here is a brief description of the scripts:
-        - [generateData](massPreservingSIRmodel/scripts/generateData.py) : this script allows to get the trajectory segments based on the number of time instants to consider and the final time value.
-        - [networks](massPreservingSIRmodel/scripts/training.py) : this script contains the definition of the two neural network architectures
-        - [plotting](massPreservingSIRmodel/scripts/plotting.py) : this script contains the routine to generate and save the plots
-        - [training](massPreservingSIRmodel/scripts/training.py) : this script contains the method to train the neural networks
-        - [utils](massPreservingSIRmodel/scripts/utils.py) : this script contains two methods to reconstruct the piecewise smooth approximation of the solution based on the neural networks.
+    - [generateData](massPreservingSIRmodel/scripts/generateData.py) : this script allows to get the trajectory segments based on the number of time instants to consider and the final time value.
+    - [networks](massPreservingSIRmodel/scripts/training.py) : this script contains the definition of the two neural network architectures
+    - [plotting](massPreservingSIRmodel/scripts/plotting.py) : this script contains the routine to generate and save the plots
+    - [training](massPreservingSIRmodel/scripts/training.py) : this script contains the method to train the neural networks
+    - [utils](massPreservingSIRmodel/scripts/utils.py) : this script contains two methods to reconstruct the piecewise smooth approximation of the solution based on the neural networks.
 - [trainedModels](massPreservingSIRmodel/trainedModels/) : this folder collects the files [unconstrainedNet.pt](massPreservingSIRmodel/trainedModels/unconstrainedNet.pt) an [constrainedNet.pt](massPreservingSIRmodel/trainedModels/constrainedNet.pt) where pre-trained versions of the two networks are stored.
 - [savedPlots](massPreservingSIRmodel/savedPlots/) : this folder is where the generated plots are stored
 
