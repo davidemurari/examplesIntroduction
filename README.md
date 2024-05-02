@@ -97,7 +97,6 @@ We provide a brief description of the files included in the directory, and concl
         - [utils](MassPreservingSIRmodel/scripts/utils.py) : this script contains two methods to reconstruct the piecewise smooth approximation of the solution based on the neural networks.
 - [trainedModels](MassPreservingSIRModel/trainedModels/) : this folder collects the files [unconstrainedNet.pt](MassPreservingSIRmodel/trainedModels/unconstrainedNet.pt) an [constrainedNet.pt](MassPreservingSIRmodel/trainedModels/constrainedNet.pt) where pre-trained versions of the two networks are stored.
 - [savedPlots](MassPreservingSIRModel/savedPlots/) : this folder is where the generated plots are stored
-- [main](MassPreservingSIRModel/main.py) : this script contains the lines of code to train or load the networks, and to generate the plot included below.
 
 The code is a simplified version of the code available at the repository https://github.com/davidemurari/StructuredNeuralNetworks 
 
