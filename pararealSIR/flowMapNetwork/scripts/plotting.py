@@ -35,7 +35,7 @@ def testPlot(vec,y0,tf,model,dtype,device):
     plt.ylabel("Solution")
     plt.legend()
     plt.savefig
-    plt.show();
+    #plt.show();
     
 def plot_results(y0,time_plot,time_plot_sequential,output,network_sol,list_of_labels,total_time,time):
 
@@ -51,6 +51,6 @@ def plot_results(y0,time_plot,time_plot_sequential,output,network_sol,list_of_la
   
     plt.legend(fontsize=25,loc='best')#, bbox_to_anchor=(1, 0.5))
     plt.xlabel(r"$t$")
-    plt.title(f"Comparison of solutions\n Computational time = {np.round(total_time,2)}")
+    plt.title(f"Comparison of solutions\n Computational time = {np.round(total_time,2)}s")
     plt.savefig(f"savedPlots/FLOW_pararealPlot_SIR.pdf",bbox_inches='tight')
-    plt.show();
+    #plt.show();

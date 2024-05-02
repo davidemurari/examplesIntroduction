@@ -33,4 +33,4 @@ def plot_results(y0,coarse_approx,networks,system,time_plot,time_plot_sequential
         name_plot = f"savedPlots/ELM_pararealPlot_{system}_{node_type}.pdf"
         
     plt.savefig(name_plot,bbox_inches='tight')
-    plt.show();
+    #plt.show();

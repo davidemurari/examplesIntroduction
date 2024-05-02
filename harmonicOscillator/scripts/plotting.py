@@ -29,11 +29,11 @@ def energyPlot(q0,pi0,tf,model,dtype,device):
     plt.semilogy(t_eval,EnergyVariationTrue,'-',c=f'k',label=fr'$|E(t)-E(0)|$ reference',linewidth=5,)
     plt.semilogy(t_eval,EnergyVariationPred,'-',c=f'b',label=fr'$|E(t)-E(0)|$ pred',linewidth=5)
      
-    plt.legend(fontsize=35,loc='best')
+    plt.legend(fontsize=35,loc='lower right')
     plt.xlabel(r"$t$")
     plt.ylabel(r"$|E(t)-E(0)|$")
     plt.savefig(f"savedPlots/energy_variation_T{tf}.pdf",bbox_inches='tight')
-    plt.show();      
+    #plt.show();      
 
 def testPlot(q0,pi0,tf,model,dtype,device):
 
@@ -53,8 +53,8 @@ def testPlot(q0,pi0,tf,model,dtype,device):
     plt.plot(t_eval,sol_network[0],'--',c='y',label=fr'$q$ pred.',linewidth=5,)
     plt.plot(t_eval,sol_network[1],'--',c='magenta',label=fr'$p$ pred.',linewidth=5,)
      
-    plt.legend(fontsize=35,loc='best', bbox_to_anchor=(0.5, 0.5),framealpha=1)
+    plt.legend(fontsize=35,loc='lower right',framealpha=1)
     plt.xlabel(r"$t$")
     plt.ylabel("Solution")
     plt.savefig(f"savedPlots/solution_curves_T{tf}.pdf",bbox_inches='tight')
-    plt.show();
+    #plt.show();

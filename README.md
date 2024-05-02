@@ -2,23 +2,23 @@
 
 This repository contains five directories. Each of these corresponds to one of the numerical experiments included in the introduction of the PhD thesis. 
 
-To install the required dependencies, run the commands
->
->
->
+To install the required dependencies, run the line
+> pip install -r requirements.txt
 
-The codes are reasonably commented, and they mostly come from simplifications of the code used for the papers included in the thesis. 
+The codes are reasonably commented, and they mostly come from simplifications of the code implemented for the papers included in the thesis. 
 
 Here is a brief description of the four directories:
   
 ### Free rigid body with Lie Euler
 
-The directory titled [freeRigidBody](freeRigidBody) includes a Jupyter notebook [Main Notebook](freeRigidBody/main.ipynb) where the explicit Euler method is compared with the Lie Euler method in solving the equations of motion of a free rigid body. The equations are
+The directory titled [freeRigidBody](freeRigidBody) includes a main script [main](freeRigidBody/main.py) where the explicit Euler method is compared with the Lie Euler method in solving the equations of motion of a free rigid body. The equations are
 
 <p style="text-align: center"><img src="plotsIntroduction/freeRigidBody.png" alt="Free rigid body" style="width:300px;"/>
 
 
 The considered initial condition is $\mathbf{x}(0) = [\cos{(0.1)},0,\sin{(0.1)}]$ and the inertia parameters are $I_1=2$, $I_2=1$ and $I_3=2/3$.
+
+In the folder [scripts](freeRigidBody/scripts/) are collected the script [utils](freeRigidBody/scripts/utils.py) with methods to compute the explicit Euler and Lie Euler steps, and the script [plotting](freeRigidBody/scripts/plotting.py) with a method generating the plot below. The plot is then saved in the folder [savedPlots](freeRigidBody/savedPlots/).
 
 The code is a simplified version of the code available at the repository https://github.com/davidemurari/learningConstrainedHamiltonians
 
@@ -34,7 +34,7 @@ The focus here is on the ODEs for a harmonic oscillator, which write
 
 <p style="text-align: center"><img src="plotsIntroduction/oscillator.png" alt="Harmonic oscillator" style="width:100px;"/>
 
-We train a neural network to solve the problem for a collection of initial conditions in the box $[-1,1]^2\subset\mathbb{R}^2$, and for $t\in [0,1]$. Then, the model is deployed on the wider time intervals $[0,T=100]$ and $[0,T=500]$.The reported plots correspond to the initial condition $[q(0),p(0)]=[1,0]$.
+We train a neural network to solve the problem for a collection of initial conditions in the box $[-1.2,1.2]^2\subset\mathbb{R}^2$, and for $t\in [0,1]$. Then, the model is deployed on the wider time intervals $[0,T=100]$ and $[0,T=500]$.The reported plots correspond to the initial condition $[q(0),p(0)]=[1,0]$.
 
 The directory titled [harmonicOscillator](harmonicOscillator) includes the following:
 - [savedPlots](harmonicOscillator/savedPlots) folder : this is where the generated plots are saved after the code is run
@@ -44,7 +44,7 @@ The directory titled [harmonicOscillator](harmonicOscillator) includes the follo
     - [training](harmonicOscillator/scripts/training.py) : this script includes the routine to train a neural network so it approximates the flow map of a harmonic oscillator for a suitable set of initial conditions and on the time interval $[0,\Delta t]$
     - [utils](harmonicOscillator/scripts/utils.py) : this script contains some utils to define the ODE for the harmonic oscillator, and define the loss function based on the ODE residual
 - [trainedModels](harmonicOscillator/trainedModels) folder : this folder contains some pre-trained models, and it is where the newly trained ones are saved too
-- [main](harmonicOscillator/main.ipynb) notebook : this notebook aims to call the proper scripts and generate the plots in the introduction, also reported here.
+- [main](harmonicOscillator/main.py) script : this script aims to call the proper scripts and generate the plots in the introduction, also reported here.
 
 ![Solution curves T=100](plotsIntroduction/solution_curves_T100.png)
 ![Energy conservation T=100](plotsIntroduction/energy_variation_T100.png)
@@ -71,7 +71,7 @@ Here is the structure of the ELM directory:
     - [plotting](pararealSIR/ELM/scripts/plotting.py): this script produces a plot of the obtained solution over the required time interval. This will be the plot of a piecewise smooth function, since over the intervals $[t_n,t_{n+1})$, with $t_n=n\,\Delta t$, the solution produced by the ELM is plotted, while at the discretisation points $t_n$ the solution is corrected with the parareal step, hence it is in principle discontinuous.
     - [repeated_experiment](pararealSIR/ELM/scripts/repeated_experiments.py) : this scripts is used to repeat the experiment of applying the proposed hybrid Parareal method a certain amount of times. This is of interest so we can compute average computational costs, hence being able to analyse a method which in principle is stochastic.
     - [utils](pararealSIR/ELM/scripts/utils.py) : this scripts contains methods that allow to define a coarse propagator as an ELM. We use these methods to train and define the coarse propagator, but also to obtain the evaluation of the coarse solver over a given time vector.
-- [main](pararealSIR/ELM/main.ipynb) : this notebook repeats the Parareal iterates 100 times, produces files that store the obtained computational costs, and also the plot of the produced solution for one choice of parameters.
+- [main](pararealSIR/ELM/main.py) : this script repeats the Parareal iterates 100 times, produces a file storing the obtained computational costs, and also the plot of the produced solution for one choice of parameters.
 
 We report here the plots for the two choices of coarse propagators, highlighting the benefit of using an ELM as a coarse propagator compared with a more conventional neural network, which would also take about 20 minutes to train.
 
@@ -87,10 +87,17 @@ The directory [Mass Preserving SIR model](MassPreservingSIRmodel) again is inter
 
 We provide a brief description of the files included in the directory, and conclude with the plot also present in the introduction.
 
-- [generateData](MassPreservingSIRmodel/generateData.py) : this scripts allows to get the trajectory segments based on the number of time instants to consider and the final time value. 
-- [main](MassPreservingSIRmodel/main.ipynb) : this notebook includes the definition of the two neural network architectures, the lines of code to train them and to display the obtained results. 
-- [unconstrainedNet](MassPreservingSIRmodel/unconstrainedNet.pt) : this is the saved model for the unconstrained neural network.
-- [constrainedNet](MassPreservingSIRmodel/constrainedNet.pt) : this is the saved model for the constrained neural network.
+- [main](MassPreservingSIRmodel/main.py) : this script includes the definition of the two neural network architectures, the lines of code to train them and to display the obtained results. 
+
+- [scripts](MassPreservingSIRmodel/scripts/) : this folder includes the scripts used to generate the plots in the introduction. Here is a brief description of the scripts:
+        - [generateData](MassPreservingSIRmodel/scripts/generateData.py) : this script allows to get the trajectory segments based on the number of time instants to consider and the final time value.
+        - [networks](MassPreservingSIRmodel/scripts/training.py) : this script contains the definition of the two neural network architectures
+        - [plotting](MassPreservingSIRmodel/scripts/plotting.py) : this script contains the routine to generate and save the plots
+        - [training](MassPreservingSIRmodel/scripts/training.py) : this script contains the method to train the neural networks
+        - [utils](MassPreservingSIRmodel/scripts/utils.py) : this script contains two methods to reconstruct the piecewise smooth approximation of the solution based on the neural networks.
+- [trainedModels](MassPreservingSIRModel/trainedModels/) : this folder collects the files [unconstrainedNet.pt](MassPreservingSIRmodel/trainedModels/unconstrainedNet.pt) an [constrainedNet.pt](MassPreservingSIRmodel/trainedModels/constrainedNet.pt) where pre-trained versions of the two networks are stored.
+- [savedPlots](MassPreservingSIRModel/savedPlots/) : this folder is where the generated plots are stored
+- [main](MassPreservingSIRModel/main.py) : this script contains the lines of code to train or load the networks, and to generate the plot included below.
 
 The code is a simplified version of the code available at the repository https://github.com/davidemurari/StructuredNeuralNetworks 
 

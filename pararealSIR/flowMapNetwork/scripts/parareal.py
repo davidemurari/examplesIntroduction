@@ -4,7 +4,6 @@ import torch
 import time as time_lib
 
 from scripts.ode_solvers import solver
-from numba import jit   
 
 def fine_integrator(ics,dts,vecRef,number_processors):
     if number_processors==1:
