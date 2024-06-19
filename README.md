@@ -74,10 +74,8 @@ Here is the structure of the ELM directory:
 
 We report here the plots for the two choices of coarse propagators, highlighting the benefit of using an ELM as a coarse propagator compared with a more conventional neural network, which would also take about 20 minutes to train.
 
-#### Plot with coarse propagator which is an ELM
-![Parareal SIR with ELM](plotsIntroduction/ELM_pararealPlot_SIR.png)
-#### Plot with coarse propagator which is based on the Flow map approach
-![Parareal SIR with Flow map approach](plotsIntroduction/FLOW_pararealPlot_SIR.png)
+#### Plot comparing ELM with Flow Map Approach
+![Parareal SIR with Flow map approach](plotsIntroduction/SIR_Plot_Intro.png)
 
 
 ### Mass preserving SIR model
